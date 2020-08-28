@@ -58,7 +58,7 @@ public class UserController {
     @GetMapping("/findAllRoles")
     public List<Role> findAllRoles()
     {
-        return  userService.findAllRoles();
+        return userService.findAllRoles();
     }
 
 
@@ -75,4 +75,9 @@ public class UserController {
 
     }
 
+    @PutMapping("/addRoles/{id}")
+    public User addRoles(@RequestBody Role role , @PathVariable int id)
+    {
+        return this.userService.addRoles(role,id);
+    }
 }
